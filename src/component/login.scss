@@ -1,72 +1,140 @@
 /* Bordered form */
 .login {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-image: url("../images/login_bg.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: ;
 
-    .left_block {
-        flex: 50%;
-        height: 100vh;
-        // background-image: url("../images/login_bg.jpg");
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-position: center;
+    .normal {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .image {
+            width: 25%;
+            height: 276px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 100%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+
+            img {
+                max-width: 100%;
+            }
+        }
+        .blk1  {
+            background-image: url(../images/baby1.jpeg);
+        }
+        .blk2  {
+            background-image: url(../images/baby2.jpeg);
+        }
+        .blk3  {
+            background-image: url(../images/baby3.jpeg);
+        }
+        .blk4  {
+            background-image: url(../images/baby4.jpeg);
+        }
+        .blk5  {
+            background-image: url(../images/baby5.jpeg);
+        }
+        .blk6  {
+            background-image: url(../images/baby6.jpeg);
+        }
+        .blk7  {
+            background-image: url(../images/baby7.jpeg);
+        }
+        .blk8  {
+            background-image: url(../images/baby8.jpeg);
+        }
+        .blk9  {
+            background-image: url(../images/baby9.jpeg);
+        }
+    }
+
+    .centre_left {
+        display: flex;
+        flex-direction: column;
+    }
+    .centre_right {
+        display: flex;
+        flex-direction: column;
+
+        .centre_right_inner {
+            display: flex;
+            flex-direction: row;
+        }
     }
 
     form {
-        flex: 50%;
-        border: 3px solid #f8f8f8;
-        margin: 20px;
-        background-color: #fdfdfda1;
-    
-    input[type=text], input[type=password] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        font-size: 13px;
-    }
-    
-    button {
-        background-color: #fc5c7d;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        font-size: 13px;
-    }
-    
-    button:hover {
-        opacity: 0.8;
-    }
-    
-    .cancelbtn {
         width: auto;
-        padding: 10px 18px;
-        background-color: #f44336;
-    }
+        flex: auto;
+        border: none;
+        margin: 0;
+        background-color: #fdfdfda1;
+        padding: 0 30px;
+
+        label {
+            display: none;
+        }
     
-    .imgcontainer {
-        text-align: center;
-        margin: 24px 0 12px 0;
-    }
-    
-    .container {
-        padding: 16px;
-    }
-    
-    span.psw {
-        float: right;
-        padding-top: 16px;
-    }
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 0 0 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 13px;
+        }
+
+        input:focus {
+            outline-offset: 0;
+            outline: 0;
+        }
+        
+        button {
+            background-color: #fc5c7d;
+            color: white;
+            padding: 14px 20px;
+            margin: 0 0 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 13px;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+            margin: 0;
+        }
+        
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+        
+        .container {
+            // padding: 16px;
+        }
+        
+        .psw {
+            float: right;
+            padding-top: 16px;
+            text-decoration: none;
+            color: #696969;
+            font-size: 14px;
+
+        }
     }
 
 }
