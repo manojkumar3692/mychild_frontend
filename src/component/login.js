@@ -1,13 +1,16 @@
 import React,{Component} from 'react';
+import gql from 'graphql-tag';
+import { useQuery } from '@apollo/react-hooks';
+import {Query,Mutation} from 'react-apollo'
 import './login.scss';
-// import baby1 from '../images/baby1.png';
-// import baby2 from '../images/baby2.jpg';
-// import baby3 from '../images/baby3.jpg';
-// import baby4 from '../images/baby4.jpg';
-// import baby5 from '../images/baby5.jpg';
-// import baby6 from '../images/baby6.jpg';
-// import baby7 from '../images/baby7.jpg';
-// import baby8 from '../images/baby8.jpg';
+
+const LOGIN = gql `
+    mutation login($email:String,$password:String) {
+        login(name:$name,password:$password) {
+            message
+        }
+    }
+`
 
 class Login extends Component {
     constructor(props) {
@@ -16,7 +19,11 @@ class Login extends Component {
 
     render() {
         return(
-            <div className="login">
+            <Mutation mutation={LOGIN} >
+            {(loginUser,{data}) => {
+                return (
+                    <div className="login">
+               
                 <div className="top_block normal">
                     <div className="image blk1">
                     </div>
@@ -62,6 +69,10 @@ class Login extends Component {
                     </div>
                 </div>          
             </div>
+                )
+            }} 
+         </Mutation>
+            
         )
     }
 }
