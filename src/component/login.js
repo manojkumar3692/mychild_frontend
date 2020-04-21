@@ -41,12 +41,15 @@ class Login extends Component {
                             <button type="submit">Login</button>
                         </div>
 
-                        <div class="container">
-                            <button type="button" class="cancelbtn">Cancel</button>
-                            <a href="#" class="psw">Forgot password?</a>
+                        <div class="container btm">
+                            {/* <button type="button" class="cancelbtn">Cancel</button> */}
+                            <a href="#" class="psw danger">Forgot password?</a>
+                            <a href="#" class="psw">Create an account</a>
                         </div>
                     </form>   
                     <div className="image blk6">
+                    </div>
+                    <div className="image blk5">
                     </div>
                     <div className="image blk7">
                     </div>
