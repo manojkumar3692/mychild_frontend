@@ -1,0 +1,29 @@
+select:focus {
+    outline-offset: 0;
+    outline: 0;
+}
+
+.login {
+
+    form {
+
+        .more_field {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+
+            select {
+                flex: 2;
+                margin: 0 10px 8px 0;
+                color: #7b7b7b;
+            }
+
+            button {
+                flex: 0;
+                background-color: #ffffff;
+                color: #4081fb;
+            }
+        }
+    }
+}

@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './login.scss';
+import { Link } from "react-router-dom";
 // import baby1 from '../images/baby1.png';
 // import baby2 from '../images/baby2.jpg';
 // import baby3 from '../images/baby3.jpg';
@@ -32,7 +33,7 @@ class Login extends Component {
                     </div>
                     <form>
                         <div class="container">
-                            <label>Username</label>
+                            <title>Login</title>
                             <input type="text" placeholder="Username"></input>
 
                             <label>Password</label>
@@ -44,7 +45,7 @@ class Login extends Component {
                         <div class="container btm">
                             {/* <button type="button" class="cancelbtn">Cancel</button> */}
                             <a href="#" class="psw danger">Forgot password?</a>
-                            <a href="#" class="psw">Create an account</a>
+                            <Link to="./register" class="psw">Create an account</Link>
                         </div>
                     </form>   
                     <div className="image blk6">
