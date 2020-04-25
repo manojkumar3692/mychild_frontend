@@ -39,7 +39,7 @@ class Register extends Component {
         let email;
         let mobile;
         return (
-            <Mutation mutation={REGISTER}>
+            <Mutation mutation={REGISTER} onCompleted={() => this.props.history.push('/login')}>
                 {(userRegister, { loading, error, data, onCompleted }) => {
                     return (
                         <div className="login">

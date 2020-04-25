@@ -9,9 +9,7 @@ import './login.scss';
 const LOGIN = gql`
     mutation login($email:String!,$password:String!) {
         login(email:$email,password:$password) {
-            id,
-            name,
-            family_relation_id
+            token
         }
     }
 `
@@ -20,14 +18,15 @@ class Login extends Component {
     constructor(props) {
         super(props)
     }
-    fun() {
-        console.log('asd')
+    afteLogin(data) {
+        let token = data.login.token
+        localStorage.setItem('valid-token',token)
     }
     render() {
         let email;
         let password;
         return (
-            <Mutation mutation={LOGIN} onCompleted={() => this.props.history.push("/register")} >
+            <Mutation mutation={LOGIN} onCompleted={this.afteLogin} >
                 {(userLogin, { loading, error, data, onCompleted }) => {
                     return (
                         <div className="login">
@@ -61,10 +60,10 @@ class Login extends Component {
                                         }} type="button">{loading ? 'Please Wait ...' : 'Login'}</button>
                                     </div>
 
-                                    <div class="container btm">
+                                    <div className="container btm">
                                         {/* <button type="button" class="cancelbtn">Cancel</button> */}
-                                        <a href="#" class="psw danger">Forgot password?</a>
-                                        <Link to="./register" class="psw">Create an account</Link>
+                                        <a href="#" className="psw danger">Forgot password?</a>
+                                        <Link to="./register" className="psw">Create an account</Link>
                                     </div>
                                     {
                                         error && <h4 className="form_container_error">{error.graphQLErrors.map(({ message }, i) => (
