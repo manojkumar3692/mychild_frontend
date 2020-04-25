@@ -37,6 +37,22 @@ class Dashboard extends Component {
                         </ul>
                 </div>
                 <div className="right_block">
+                    <div className="search_block">
+                        <div className="profile_lite">
+                            <p className="color">Miniali Appa</p>
+                            <p>Wallet Total - 20,000INR</p>
+                        </div>
+                        <div className="search">
+                            <input type="search" placeholder="Search here"></input>
+                            <button>Search</button>
+                        </div>
+                    </div>
+                    <ul className="top">
+                        <li>Savings</li>
+                        <li>Birthday Gifts</li>
+                        <li>Education Pack</li>
+                        <li>Shoppings</li>
+                    </ul>
                 </div>
             </div>
         )
