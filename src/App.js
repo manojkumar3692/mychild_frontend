@@ -8,6 +8,7 @@ import './App.css';
 import Login from './component/login/login';
 import Register from './component/register/register';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import Dashboard from './component/dashboard';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -40,6 +41,7 @@ const App = () => {
           <Route exact path='/' component={Login}></Route>
           <Route exact path='/login' component={Login}></Route>
           <Route exact path='/register' component={Register}></Route>
+          <Route exact path='/dashboard' component={Dashboard}></Route>
         </Switch>
       </Router>
       </div>
