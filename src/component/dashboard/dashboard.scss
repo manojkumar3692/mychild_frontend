@@ -1,9 +1,9 @@
 .left_block {
-    width: 5%;
+    width: 15%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -11,51 +11,38 @@
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
 
-    .left_block_logo {
-        padding: 2rem 0rem;
-        background: #4c75f2;
+    .logo {
+        margin: 0;
+        padding: 2em;
         text-align: center;
 
-        a {
-            color: #ffffff;
-            padding: 13px;
-            background-color: #2954da;
-            border-radius: 25px;
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10em;
         }
     }
 
     ul  {
         width: 100%;
-        border-top: 1px solid #d6d6d6;
+        border-top: 1px solid #e6e6e6;
 
         li {
             border-bottom: 1px solid #e6e6e6;
 
             a {
                 display: flex;
-                padding: 2rem 1rem;
+                padding: 1.2rem 1rem;
                 color: #000000;
-                align-items: center;
-                justify-content: center;
+                align-items: flex-start;
+                justify-content: flex-start;
             }
 
             .football:before {
-                content: "";
-                width: 20px;
-                height: 20px;
                 background-image: url(../../images/soccer_player.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                margin-right: 5px;
             }
             .golf:before {
-                content: "";
-                width: 20px;
-                height: 20px;
                 background-image: url(../../images/golf_player.svg);
-                background-repeat: no-repeat;
-                background-size: contain;
-                margin-right: 5px;
             }
 
             a:hover {
@@ -63,6 +50,15 @@
                 background-color: #f5f3f3;
                 transition: .2s ease-in-out;
             }
+            
+        }
+        li a:before {
+            content: "";
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            margin-right: 8px;
         }
     }
 
@@ -89,7 +85,7 @@
 }
 
 .right_block {
-    width: 95%;
+    width: 85%;
     padding: 1rem;
 
     .search_container {
