@@ -1,6 +1,7 @@
 // require("bootstrap/less/bootstrap.less");
 import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import { Link,withRouter,Redirect } from 'react-router-dom';
 import Loader from 'react-loader-spinner'
 import './dashboard.scss';
 import 'react-toastify/dist/ReactToastify.css';
@@ -45,4 +46,4 @@ class Dashboard extends Component {
         )
     }
 }
-export default Dashboard;
+export default withRouter(Dashboard);

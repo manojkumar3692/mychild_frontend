@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link,withRouter } from 'react-router-dom';
+import { Link,withRouter,Redirect } from 'react-router-dom';
 
 import gql from 'graphql-tag';
 import { useQuery, useMutation } from '@apollo/react-hooks';
@@ -17,10 +17,12 @@ const LOGIN = gql`
 class Login extends Component {
     constructor(props) {
         super(props)
+        this.afteLogin = this.afteLogin.bind(this)
     }
     afteLogin(data) {
         let token = data.login.token
         localStorage.setItem('valid-token',token)
+        this.props.history.push('/dashboard')
     }
     render() {
         let email;
@@ -97,4 +99,4 @@ class Login extends Component {
         )
     }
 }
-export default Login;
+export default withRouter(Login);
