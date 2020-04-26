@@ -25,21 +25,25 @@ const PopupWrapper = (props) => {
     const [error, setError] = useState()
     const [eventID, setEventName] = useState('');
     const variables = {amount: amount,message: message,user_id:user_id,reward_id:eventID}
-    const [addReward,{loading}] = useMutation(CREATE_REWARD,{
-        variables: variables
-    });
+    const [addReward,{loading}] = useMutation(CREATE_REWARD,{variables: variables,onError: (e) => check(e), // never gets called
+    onCompleted: () => console.log('completed!')},);
     const submit = async () => {
         try {
           const { data } = await addReward()
           setData(data)
         }
-        catch (e) {
+        catch (e) {  
+            console.log(e)
           setError(e.message)
         }
       }
 
-     const check = (data) => {
+     const check = (e) => {
          debugger
+        if(e.message === 'auth_error') { 
+            return props.history.push('/login')
+        }
+        props.history.push('/login')
      } 
 
     return (
@@ -69,4 +73,4 @@ const PopupWrapper = (props) => {
     )
 }
 
-export default PopupWrapper
+export default withRouter(PopupWrapper)

@@ -55,7 +55,7 @@ class Dashboard extends Component {
                         <li>Education Pack</li>
                         <li>Shoppings</li>
                     </ul>
-                    <PopupWrapper/>
+                    <PopupWrapper props={this.props}/>
                 </div>
             </div>
         )
