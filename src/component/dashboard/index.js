@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { Link,withRouter,Redirect } from 'react-router-dom';
+import PopupWrapper from '../commonPopup/index'
 import Loader from 'react-loader-spinner'
 import './dashboard.scss';
 import 'react-toastify/dist/ReactToastify.css';
@@ -54,6 +55,7 @@ class Dashboard extends Component {
                         <li>Education Pack</li>
                         <li>Shoppings</li>
                     </ul>
+                    <PopupWrapper/>
                 </div>
             </div>
         )

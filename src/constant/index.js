@@ -56,3 +56,26 @@ export const FAMILY_RELATION = [
         value: 'kollu thatha'
     }
 ]
+
+export const EVENT_TYPE = [
+    {
+        id: 1,
+        value: 'Birthday'
+    },
+    {
+        id: 2,
+        value: 'Gift'
+    },
+    {
+        id: 3,
+        value: 'Saving'
+    },
+    {
+        id: 4,
+        value: 'Shopping'
+    },
+    {
+        id: 5,
+        value: 'Stocks'
+    }
+]

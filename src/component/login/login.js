@@ -9,7 +9,12 @@ import './login.scss';
 const LOGIN = gql`
     mutation login($email:String!,$password:String!) {
         login(email:$email,password:$password) {
-            token
+            token,
+            name,
+            email,
+            family_relation_id,
+            mobile_number
+            id
         }
     }
 `
@@ -22,6 +27,8 @@ class Login extends Component {
     afteLogin(data) {
         let token = data.login.token
         localStorage.setItem('valid-token',token)
+        let user_details = data
+        localStorage.setItem('user_info',JSON.stringify(user_details))
         this.props.history.push('/dashboard')
     }
     render() {
