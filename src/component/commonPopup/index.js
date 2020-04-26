@@ -18,14 +18,14 @@ mutation createReward($amount:String!,$message:String!,$user_id:ID!,$reward_id:I
 `
 const PopupWrapper = (props) => {
     let user = JSON.parse(localStorage.getItem('user_info'))
-    let user_id = user.login.id
+    let user_id = user === null ? '' :  user.login.id
     const [amount,setAmount] = useState()
     const [message,setMessage] = useState()
     const [data, setData] = useState()
     const [error, setError] = useState()
     const [eventID, setEventName] = useState('');
     const variables = {amount: amount,message: message,user_id:user_id,reward_id:eventID}
-    const [addReward,{loading}] = useMutation(CREATE_REWARD,{variables: variables,onError: (e) => check(e), // never gets called
+    const [addReward,{loading}] = useMutation(CREATE_REWARD,{variables: variables,onError: (e) => checkError(e), // never gets called
     onCompleted: () => console.log('completed!')},);
     const submit = async () => {
         try {
@@ -33,17 +33,16 @@ const PopupWrapper = (props) => {
           setData(data)
         }
         catch (e) {  
-            console.log(e)
           setError(e.message)
         }
       }
 
-     const check = (e) => {
+     const checkError = (e) => {
+         console.log(e)
          debugger
-        if(e.message === 'auth_error') { 
-            return props.history.push('/login')
+        if(e.message === 'GraphQL error: auth_error') { 
+            props.history.push('/login')
         }
-        props.history.push('/login')
      } 
 
     return (

@@ -2,6 +2,7 @@ import React from 'react';
 import {ApolloClient} from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo'
 import { createHttpLink } from 'apollo-link-http';
+import { onError } from "apollo-link-error";
 import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import './App.css';
@@ -26,8 +27,19 @@ const authLink = setContext((_, { headers }) => {
   }
 });
 
+
+const linkError = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors)
+    graphQLErrors.forEach(({ message, locations, path }) =>
+      console.log(
+        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+      )
+    );
+  if (networkError) console.log(`[Network error]: ${networkError}`);
+});
+
 const client = new ApolloClient({
-  link: authLink.concat(httpLink),
+  link: authLink.concat(linkError).concat(httpLink),
   cache: new InMemoryCache()
 });
 
