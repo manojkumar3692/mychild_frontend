@@ -15,12 +15,18 @@ class Dashboard extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            
+            userData: ''
         }
+        this.getUserData = this.getUserData.bind(this)
        
     }
 
     componentDidMount() {
+        this.getUserData()
+    }
+
+    getUserData() {
+        let user = JSON.parse(localStorage.getItem('user_info'))
     }
 
 

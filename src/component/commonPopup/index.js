@@ -7,29 +7,30 @@ import  './popup.scss'
 import gql from 'graphql-tag';
 
 const CREATE_REWARD = gql`
-mutation createReward($amount:String!,$message:String!,$user_id:ID!,$reward_id:ID!) {
-    createReward(amount:$amount,message:$message,user_id:$user_id,reward_id:$reward_id) {
+mutation createReward($amount:String!,$message:String!,$userId:ID!,$reward_id:ID!) {
+    createReward(amount:$amount,message:$message,userId:$userId,reward_id:$reward_id) {
         amount,
         message,
-        user_id,
+        userId,
         reward_id
     }
 }
 `
 const PopupWrapper = (props) => {
     let user = JSON.parse(localStorage.getItem('user_info'))
-    let user_id = user === null ? '' :  user.login.id
+    let userId = user === null ? '' :  user.login.id
     const [amount,setAmount] = useState()
     const [message,setMessage] = useState()
     const [data, setData] = useState()
     const [error, setError] = useState()
     const [eventID, setEventName] = useState('');
-    const variables = {amount: amount,message: message,user_id:user_id,reward_id:eventID}
+    const variables = {amount: amount,message: message,userId:userId,reward_id:eventID}
     const [addReward,{loading}] = useMutation(CREATE_REWARD,{variables: variables,onError: (e) => checkError(e), // never gets called
     onCompleted: () => console.log('completed!')},);
     const submit = async () => {
         try {
-          const { data } = await addReward()
+          const { data } = await addReward();
+          debugger
           setData(data)
         }
         catch (e) {  

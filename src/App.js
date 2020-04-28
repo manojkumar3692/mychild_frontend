@@ -13,6 +13,7 @@ import Dashboard from './component/dashboard';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
+  // uri: 'https://boiling-taiga-44399.herokuapp.com/graphql'
 });
 
 const authLink = setContext((_, { headers }) => {
