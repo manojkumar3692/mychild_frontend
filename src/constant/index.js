@@ -60,22 +60,42 @@ export const FAMILY_RELATION = [
 export const EVENT_TYPE = [
     {
         id: 1,
-        value: 'Birthday'
+        value: 'Birthday',
+        total_reward_amount: ''
     },
     {
         id: 2,
-        value: 'Gift'
+        value: 'Gift',
+        total_reward_amount: ''
     },
     {
         id: 3,
-        value: 'Saving'
+        value: 'Saving',
+        total_reward_amount: ''
     },
     {
         id: 4,
-        value: 'Shopping'
+        value: 'Shopping',
+        total_reward_amount: ''
     },
     {
         id: 5,
-        value: 'Stocks'
+        value: 'Stocks',
+        total_reward_amount: ''
+    },
+    {
+        id: 6,
+        value: 'Emergency',
+        total_reward_amount: ''
+    },
+    {
+        id: 7,
+        value: 'Education',
+        total_reward_amount: ''
+    },
+    {
+        id: 8,
+        value: 'Petty Cash',
+        total_reward_amount: ''
     }
 ]

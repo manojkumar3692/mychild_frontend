@@ -8,8 +8,10 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import './App.css';
 import Login from './component/login/login';
 import Register from './component/register/register';
-import {BrowserRouter as Router, Switch, Route, Link, withRouter} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link, withRouter, Redirect, useHistory} from 'react-router-dom';
 import Dashboard from './component/dashboard';
+
+const App = (props) => {
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -29,12 +31,16 @@ const authLink = setContext((_, { headers }) => {
 });
 
 
-const linkError = onError(({ graphQLErrors, networkError }) => {
+const linkError = onError(({ graphQLErrors, networkError, response, operation  }) => {
   if (graphQLErrors)
-    graphQLErrors.forEach(({ message, locations, path }) =>
+    graphQLErrors.forEach(({ message, locations, path , extensions}) => {
+      if(extensions.code === "UNAUTHENTICATED") {
+        
+      }
       console.log(
         `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
       )
+    }
     );
   if (networkError) console.log(`[Network error]: ${networkError}`);
 });
@@ -43,8 +49,6 @@ const client = new ApolloClient({
   link: authLink.concat(linkError).concat(httpLink),
   cache: new InMemoryCache()
 });
-
-const App = () => {
   return (
   <ApolloProvider client={client}>
    <div className="main_wrapper">

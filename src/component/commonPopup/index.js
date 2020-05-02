@@ -39,8 +39,6 @@ const PopupWrapper = (props) => {
       }
 
      const checkError = (e) => {
-         console.log(e)
-         debugger
         if(e.message === 'GraphQL error: auth_error') { 
             props.history.push('/login')
         }
