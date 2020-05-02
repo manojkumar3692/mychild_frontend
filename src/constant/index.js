@@ -61,41 +61,41 @@ export const EVENT_TYPE = [
     {
         id: 1,
         value: 'Birthday',
-        total_reward_amount: ''
+        total_reward_amount: '100'
     },
     {
         id: 2,
         value: 'Gift',
-        total_reward_amount: ''
+        total_reward_amount: '200'
     },
     {
         id: 3,
         value: 'Saving',
-        total_reward_amount: ''
+        total_reward_amount: '300'
     },
     {
         id: 4,
         value: 'Shopping',
-        total_reward_amount: ''
+        total_reward_amount: '20000'
     },
     {
         id: 5,
         value: 'Stocks',
-        total_reward_amount: ''
+        total_reward_amount: '2000'
     },
     {
         id: 6,
         value: 'Emergency',
-        total_reward_amount: ''
+        total_reward_amount: '1345'
     },
     {
         id: 7,
         value: 'Education',
-        total_reward_amount: ''
+        total_reward_amount: '54309'
     },
     {
         id: 8,
         value: 'Petty Cash',
-        total_reward_amount: ''
+        total_reward_amount: '239'
     }
 ]

@@ -14,7 +14,7 @@ import Dashboard from './component/dashboard';
 const App = (props) => {
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: 'http://localhost:3000/graphql',
   // uri: 'https://boiling-taiga-44399.herokuapp.com/graphql'
 });
 

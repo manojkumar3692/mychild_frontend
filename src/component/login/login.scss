@@ -106,6 +106,7 @@
             display: block;
             font-size: 18px;
             padding-bottom: 15px;
+            color: #164baf;
         }
     
         input, select {
@@ -131,32 +132,13 @@
         }
         
         button {
-            background-color: #4081fb;
-            color: white;
-            padding: 14px 20px;
-            margin: 0 0 8px 0;
-            border: none;
-            cursor: pointer;
             width: 100%;
-            font-size: 13px;
-            font-family: 'archiaregular';
-            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-            -webkit-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-            border-radius: 6px;
-        }
-        
-        button:hover {
-            opacity: 0.8;
-        }
-
-        button:focus {
-            outline: 0px;
         }
 
         .form_container_error {
             margin: 0;
-    position: absolute;
-    bottom: 2rem;
+            position: absolute;
+            bottom: 2rem;
             span {
                 font-size: 12px;
                 color: #ff8383;

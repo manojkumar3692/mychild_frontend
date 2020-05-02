@@ -49,7 +49,8 @@ const PopupWrapper = (props) => {
             <Popup trigger={<button className="button"> Open Modal </button>}  modal closeOnDocumentClick  className="manoj">
                 {close => (
                     <div className="modal">
-                        <div>
+                        <div className="popup_wrapper">
+                        <div className="more_field">
                             <select onChange={(event) => setEventName(event.target.value)}>
                                 {
                                     EVENT_TYPE.map((event,index) => {
@@ -59,10 +60,13 @@ const PopupWrapper = (props) => {
                                     })
                                 }
                             </select>
+                            </div>
                             <input onChange={(event) => setAmount(event.target.value)} placeholder="amount"></input>
                             <input onChange={(event) => setMessage(event.target.value)}  placeholder="message"></input>
-                            <button onClick={() => submit()}>{loading ? 'Loading': 'Submit'}</button>
-                            <button onClick={() => close()}>Cancel</button>
+                            <div class="popup_btm">
+                                <button onClick={() => submit()}>{loading ? 'Loading': 'Submit'}</button>
+                                <button onClick={() => close()}>Cancel</button>
+                            </div>
                         </div>
                     </div>
                 )}

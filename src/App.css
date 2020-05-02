@@ -115,7 +115,60 @@ input, button, select, textarea {
 .flex_wrap {
   display: flex;
 }
-/* 
+
 iframe {
   display: none;
-} */
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 0 0 8px 0;
+  display: inline-block;
+  border: none;
+  box-sizing: border-box;
+  font-size: 13px;
+  font-family: 'archiaregular';
+  /* border-bottom: 1px solid #ccc; */
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 6px;
+  color: #7b7b7b;
+}
+
+input:focus {
+  outline-offset: 0;
+  outline: 0;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:focus {
+  outline: 0px;
+}
+
+button {
+  background-color: #4081fb;
+  color: white;
+  padding: 14px 20px;
+  margin: 0 0 8px 0;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'archiaregular';
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:focus {
+  outline: 0px;
+}
+

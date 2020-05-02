@@ -107,6 +107,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
+        flex-wrap: wrap;
         border-radius: 5px;
         background-color: #fff;
         padding: 6px;
@@ -114,13 +115,75 @@
         -webkit-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
 
         li {
-            padding: 3em;
+            padding: 1em 0.5em 1em 2em;
             font-size: 15px;
             color: #3e3e3e;
             margin: 5px;
             background-color: #f3f3f3;
-            flex: 1;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            height: 115px;
+            position: relative;
+            text-align: left;
+            flex: 1 0 21%;
+
+            .event_tittle {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                height: 100%;
+            }
+
+            .event_icon {
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+
+                svg {
+                    width: 55px;
+                    height: 55px;
+                }
+            }
+
+            span {
+                margin-left: 6px;
+                overflow-y: scroll;
+            }
+
+            .amt {
+                color: #76ad07;
+                font-weight: 600;
+            }
+
+            .tittle {
+                margin-bottom: 10px;
+                font-size: 16px;
+            }
+
+            span:before {
+                content: "";
+                width: 20px;
+                height: 20px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+            }
+
+            .tittle:before {
+                background-image: url(../../images/gift.svg);
+                left: 10px;
+                top: 14px;
+            }
+
+            .amt:before {
+                background-image: url(../../images/cash.svg);
+                left: 10px;
+                top: unset;
+                bottom: 51px;
+            }
         }
     }
 
@@ -167,21 +230,42 @@
             padding-left: 15px;
             background-color: #f7f7f7;
             border-radius: 5px;
+
+            input {
+                padding: 0;
+                margin: 0;
+                background-color: #f1f1f1;
+                border-radius: 0;
+            }
+
+            button {
+                font-size: 14px;
+                color: #ffffff;
+                border: none;
+                border-radius: 0px;
+                cursor: pointer;
+                margin-left: 10px;
+                position: relative;
+                font-family: 'archiaregular';
+                padding: 18px 10px;
+                width: auto;
+                margin: 0;
+                /* border-left: 1px solid #e8e8e8; */
+                background-color: #9acd32;
+                box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+                -webkit-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+                border-radius: 0px 5px 5px 0px;
+            }
+            
+            button:hover {
+                background-color: #d4deff;
+                transition: .2s ease-in-out;
+            }
         }
     }
 }
 
-input {
-    -webkit-appearance: none;
-    background-color: transparent;
-    border: none;
-    border-radius: 0px;
-    font-size: 14px;
-    color: #4c4c4c;
-    font-family: 'archiaregular';
-    flex: auto;
-    transition: .2s ease-in-out;
-}
+
 
 // button:after {
 //     content: "";
@@ -194,27 +278,7 @@ input {
 //     top: 21px;
 // }
 
-button {
-    font-size: 14px;
-    color: #ffffff;
-    border: none;
-    border-radius: 0px;
-    cursor: pointer;
-    margin-left: 10px;
-    position: relative;
-    font-family: 'archiaregular';
-    padding: 18px 10px;
-    /* border-left: 1px solid #e8e8e8; */
-    background-color: #9acd32;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
-    border-radius: 0px 5px 5px 0px;
-}
 
-button:hover {
-    background-color: #d4deff;
-    transition: .2s ease-in-out;
-}
 
 .loader_global {
     height: 50vh;
